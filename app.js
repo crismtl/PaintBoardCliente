@@ -6,6 +6,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/chat",
       templateUrl: "rutas/chat.html",
       controller: 'ChatController'
+    })
+    .state('canvas', {
+      url: "/canvas",
+      templateUrl: "rutas/canvas.html",
+      controller: 'CanvasController'
     });
   $urlRouterProvider.otherwise("/chat");
 });

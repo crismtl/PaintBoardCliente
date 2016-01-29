@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Paint Board</title>
-    <link href="librerias/css/bootstrap.css" rel="stylesheet">
-    <link href="librerias/css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="librerias/css/bootstrap.css">
+    <link rel="stylesheet" href="librerias/css/animate.css">
+    <link rel="stylesheet" href="librerias/css/my-style.css">
     <link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css"/>
   </head>
   <body ng-app="paintboard">
@@ -26,6 +27,9 @@
               <a href="#/chat">Chat
                 <span class="sr-only">(current)</span>
               </a>
+            </li>
+            <li class="active">
+              <a href="#/canvas">Pizarra</a>
             </li>
           </ul>
         </div>
@@ -52,5 +56,6 @@
     <!--<script src="factory/factory.js"></script>-->
     <!-- controladores -->
     <script src="controladores/ChatController.js"></script>
+    <script src="controladores/CanvasController.js"></script>
   </body>
 </html>
