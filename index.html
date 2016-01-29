@@ -5,13 +5,36 @@
     <title>Paint Board</title>
     <link href="librerias/css/bootstrap.css" rel="stylesheet">
     <link href="librerias/css/animate.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://npmcdn.com/angular-to
+    <link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css"/>
   </head>
-  <body>
-  <div class="container">
-    <div class="" ui-view></div>
-  </div>
-  <!-- angular -->
+  <body ng-app="paintboard">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Paint Board</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="#/chat">Chat
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div ui-view></div>
+    </div>
+    <!-- angular -->
     <script src="librerias/js/angular.js"></script>
     <!-- dependencias -->
     <script src="librerias/js/angular-animate.js"></script>
@@ -20,11 +43,13 @@
     <script src="librerias/js/angular-ui-router.js"></script>
     <script src="librerias/js/jquery-1.12.0.js"></script>
     <script src="librerias/js/bootstrap.js"></script>
+    <!--socket-->
+    <script src="http://localhost:1337/js/dependencies/sails.io.js"></script>
     <!-- aplicacion -->
     <script src="app.js"></script>
     <!-- factory -->
-    <script src="factory/factory.js"></script>
+    <!--<script src="factory/factory.js"></script>-->
     <!-- controladores -->
-    
+    <script src="controladores/ChatController.js"></script>
   </body>
 </html>

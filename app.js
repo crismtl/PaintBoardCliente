@@ -5,7 +5,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('chat', {
       url: "/chat",
       templateUrl: "rutas/chat.html",
-      //controller: 'HomeController'
+      controller: 'ChatController'
     });
   $urlRouterProvider.otherwise("/chat");
 });
