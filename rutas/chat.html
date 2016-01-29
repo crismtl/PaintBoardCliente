@@ -1,3 +1,8 @@
 <h1>Chat</h1>
 <input ng-model="nuevoMensaje" type="text" id="inputMensaje" placeholder="Escriba su mensaje aquí">
 <button class="btn btn-default" ng-click="enviar()">Enviar</button>
+<div ng-repeat="mensaje in mensajes">
+  <p>
+    {{mensaje.texto}}
+  </p>
+</div>
