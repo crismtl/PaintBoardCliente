@@ -1,3 +1,5 @@
+io.sails.url = "http://localhost:1337";
+
 var app = angular.module('paintboard', ['ui.router', 'ngAnimate', 'ngResource', 'toastr']);
 
 app.config(function($stateProvider, $urlRouterProvider) {

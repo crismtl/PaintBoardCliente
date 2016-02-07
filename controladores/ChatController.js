@@ -1,5 +1,4 @@
 app.controller('ChatController', ['$scope', '$http', 'toastr', function($scope, $http, toastr) {
-  io.sails.url = "http://localhost:1337";
   $scope.nuevoMensaje;
   //Nos suscribimos gracias al 'Blueprint' de Sailsjs con el modelo Chat
   //Ademas de esto Sails nos trae todos los datos del servidor
