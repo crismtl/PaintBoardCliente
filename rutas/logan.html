@@ -1,4 +1,12 @@
-<h4>{{welcomeMsg}}</h4>
-<button type="button" ng-click="login()" ng-hide="isLoggedIn" class="btn btn-default navbar-btn">
-    Login
-</button>
+ <!--<div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
+    <h4>{{welcomeMsg}}</h4>
+    <button type="button" ng-click="login()" ng-hide="isLoggedIn" class="btn btn-default navbar-btn">
+        Login
+    </button>
+</div>
+
+<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true">adasd</div>-->
+<button id="login-btn">
+            <span ng-if="status">Logout</span>
+            <span ng-if="!status">Login</span>
+        </button>

@@ -10,6 +10,7 @@ app.controller('LoginController', ['$scope', '$facebook', function($scope, $face
     function refresh() {
         $facebook.api("/me").then(
             function(response) {
+            	console.log(JSON.stringify(response));
                 $scope.welcomeMsg = "Welcome " + response.name;
                 $scope.isLoggedIn = true;
             },
