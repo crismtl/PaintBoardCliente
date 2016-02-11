@@ -23,7 +23,7 @@ app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
     })
     .state('login', {
       url: "/login",
-      templateUrl: "rutas/logan.html",
+      templateUrl: "rutas/login.html",
       controller: 'LoginController'
     })
     .state('registro', {

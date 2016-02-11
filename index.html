@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Paint Board</title>
     <link rel="stylesheet" href="librerias/css/bootstrap.min.css">
-    <link rel="stylesheet" href="librerias/css/animate.css">
+    <link rel="stylesheet" href="librerias/css/bootstrap-social.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="librerias/css/my-style.css">
-    <link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css"/>
-  </head>
-  <body ng-app="paintboard">
+    <link rel="stylesheet" href="librerias/css/animate.css">
+    <link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css" />
+</head>
+
+<body ng-app="paintboard">
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#/home"><img class="imagen-brand" alt="PaintBoard" src="img/paint.png"></a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active">
-              <a href="#/acerca">Acerca de</a>
-            </li>
-
-            <li class="active">
-              <a href="#/chat">Chat
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/home"><img class="imagen-brand" alt="PaintBoard" src="img/paint.png"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#/acerca">Acerca de</a>
+                    </li>
+                    <li class="active">
+                        <a href="#/chat">Chat
                 <span class="sr-only">(current)</span>
               </a>
-            </li>
-            <li>
-              <a href="#/canvas">Pizarra</a>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-        <li><a href="#/login">Login</a></li>
-      </ul>
-          <ul class="nav navbar-nav navbar-right">
-        <li><a href="#/registro">Regístrate</a></li>
-      </ul>
-
+                    </li>
+                    <li>
+                        <a href="#/canvas">Pizarra</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/login">Login</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/registro">Regístrate</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
     <div class="container">
-      <div ui-view></div>
+        <div ui-view></div>
     </div>
-
     <!--socket-->
     <script src="http://localhost:1337/js/dependencies/sails.io.js"></script>
     <!-- angular -->
@@ -72,6 +72,7 @@
     <script src="controladores/CanvasController.js"></script>
     <script src="controladores/LoginController.js"></script>
     <script src="controladores/RegistroController.js"></script>
-      <script src="Factories/UsuarioFactory.js"></script>
-  </body>
+    <script src="Factories/UsuarioFactory.js"></script>
+</body>
+
 </html>
