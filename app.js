@@ -29,7 +29,7 @@ app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
     .state('registro', {
       url: "/registro",
       templateUrl: "rutas/registro.html",
-    //  controller: 'ChatController'
+    controller: 'RegistroController'
     })
     .state('canvas', {
       url: "/canvas",
@@ -50,7 +50,7 @@ app.run(function($rootScope ) {
      var firstScriptElement = document.getElementsByTagName('script')[0];
 
      // Create a new script element and set its id
-     var facebookJS = document.createElement('script'); 
+     var facebookJS = document.createElement('script');
      facebookJS.id = 'facebook-jssdk';
 
      // Set the new script's source to the source of the Facebook JS SDK

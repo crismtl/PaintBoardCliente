@@ -1,23 +1,23 @@
-<form class="form-horizontal">
+<form class="form-horizontal" ng-submit="agregarNuevoUsuario()">
   <fieldset>
     <legend> <h1>Registro </h1></legend>
     <div class="form-group">
       <label for="inputEmail" class="col-lg-2 control-label">Nombres: </label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="inputNombre" placeholder="Nombres">
+        <input type="text" class="form-control" id="inputNombre" ng-model="nuevoUsuario.nombre" placeholder="Nombres">
       </div>
     </div>
     <div class="form-group">
       <label for="inputEmail" class="col-lg-2 control-label">Apellidos: </label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="inputApellido" placeholder="Apellidos">
+        <input type="text" class="form-control" id="inputApellido" ng-model="nuevoUsuario.apellido" placeholder="Apellidos">
       </div>
     </div>
 
     <div class="form-group">
       <label for="inputEmail" class="col-lg-2 control-label">Fecha de Nacimiento: </label>
       <div class="col-lg-10">
-        <input type="date" class="form-control" id="inputFecha" placeholder=" ">
+        <input type="date" class="form-control" id="inputFecha"  ng-model="nuevoUsuario.fechaDeNacimiento" placeholder=" ">
       </div>
     </div>
 
@@ -25,13 +25,13 @@
     <div class="form-group">
       <label for="inputEmail" class="col-lg-2 control-label">Email: </label>
       <div class="col-lg-10">
-        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+        <input type="email" class="form-control" id="inputEmail"  ng-model="nuevoUsuario.email" placeholder="Email">
       </div>
     </div>
     <div class="form-group">
       <label for="inputPassword" class="col-lg-2 control-label">Password: </label>
       <div class="col-lg-10">
-        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        <input type="password" class="form-control" id="inputPassword" ng-model="nuevoUsuario.password" placeholder="Password">
 
       </div>
     </div>
@@ -39,7 +39,7 @@
     <div class="form-group">
       <label for="inputPassword" class="col-lg-2 control-label">Confirmar Password: </label>
       <div class="col-lg-10">
-        <input type="password" class="form-control" id="inputCPassword" placeholder=" ">
+        <input type="password" class="form-control" id="inputCPassword" ng-model="nuevoUsuario.confirmar" placeholder=" ">
 
       </div>
     </div>
