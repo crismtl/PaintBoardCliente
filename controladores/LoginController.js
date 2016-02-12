@@ -1,5 +1,4 @@
-app.controller('LoginController', ['$scope', '$facebook', function($scope, $facebook) {
-    console.log('entrando login');
+app.controller('LoginController', ['$scope', 'UsuarioFactory', '$facebook', function($scope, UsuarioFactory, $facebook) {
     $scope.isLoggedIn = false;
     $scope.login = function() {
         $facebook.login().then(function() {
@@ -10,7 +9,7 @@ app.controller('LoginController', ['$scope', '$facebook', function($scope, $face
     function refresh() {
         $facebook.api("/me").then(
             function(response) {
-            	console.log(JSON.stringify(response));
+                console.log(JSON.stringify(response));
                 $scope.welcomeMsg = "Welcome " + response.name;
                 $scope.isLoggedIn = true;
             },
@@ -19,4 +18,25 @@ app.controller('LoginController', ['$scope', '$facebook', function($scope, $face
             });
     }
     refresh();
+
+    $scope.usuario = {
+        email: '',
+        password: ''
+    }
+
+    $scope.loginNormal = function() {
+        UsuarioFactory.login({
+                usuario: $scope.usuario.email,
+                password: $scope.usuario.password
+            })
+            .$promise.then(
+                function success(respuesta) {
+                    console.log(respuesta);
+                    //$scope.entrenadores.push(respuesta.data);
+
+                },
+                function error(error) {
+                    console.log(error);
+                });
+    }
 }]);

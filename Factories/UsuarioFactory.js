@@ -7,13 +7,12 @@ app.factory('UsuarioFactory', ['$resource', function($resource) {
       params: {
         idUsuario: '@idUsuario'
       }
-    }
-  }, {
+    },
     login: {
-      method: 'PUT',
-      params: {
-        idUsuario: '@idUsuario'
-      }
+      url: 'http://localhost:1337/Usuario/login',
+      method: 'POST',
+      //params: {},
+      isArray: true
     }
   });
   return factory;
