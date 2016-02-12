@@ -47,7 +47,7 @@ app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
             //controller: 'CanvasController',
             data: {
                 nivelDeAcceso: 1,
-                loginRequerido: true
+                loginRequerido: false
             }
         })
         .state('canvas', {

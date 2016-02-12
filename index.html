@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Paint Board</title>
+    <link rel="icon" type="image/ico" href="/favicon.ico">
     <link rel="stylesheet" href="librerias/css/bootstrap.min.css">
     <link rel="stylesheet" href="librerias/css/bootstrap-social.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -22,7 +23,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#/"><img class="imagen-brand" alt="PaintBoard" src="img/paint.png"></a>
+                <a class="navbar-brand" href="#/"><img class="imagen-brand" alt="PaintBoard" src="imagenes/paint.png"></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -35,6 +36,7 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Mi Perfil</a></li>
                     <li><a href="#/registro">Regístrate </a></li>
                     <li><a href="#/login">Login </a></li>
                 </ul>
@@ -61,13 +63,12 @@
     <!-- aplicacion -->
     <script src="app.js"></script>
     <!-- factory -->
-    <!--<script src="factory/factory.js"></script>-->
+    <script src="factories/UsuarioFactory.js"></script>
     <!-- controladores -->
     <script src="controladores/ChatController.js"></script>
     <script src="controladores/CanvasController.js"></script>
     <script src="controladores/LoginController.js"></script>
     <script src="controladores/RegistroController.js"></script>
-    <script src="Factories/UsuarioFactory.js"></script>
 </body>
 
 </html>
