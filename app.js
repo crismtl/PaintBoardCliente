@@ -50,6 +50,15 @@ app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
                 loginRequerido: false
             }
         })
+        .state('miperfil', {
+            url: "/miperfil",
+            templateUrl: "rutas/miperfil.html",
+            //controller: 'CanvasController',
+            data: {
+                nivelDeAcceso: 1,
+                loginRequerido: false
+            }
+        })
         .state('canvas', {
             url: "/canvas",
             templateUrl: "rutas/canvas.html",
