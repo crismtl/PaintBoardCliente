@@ -10,9 +10,7 @@ app.factory('UsuarioFactory', ['$resource', function($resource) {
     },
     login: {
       url: 'http://localhost:1337/Usuario/login',
-      method: 'POST',
-      //params: {},
-      isArray: true
+      method: 'POST'
     }
   });
   return factory;

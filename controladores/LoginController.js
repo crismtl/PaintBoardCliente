@@ -24,19 +24,17 @@ app.controller('LoginController', ['$scope', 'UsuarioFactory', '$facebook', func
         password: ''
     }
 
-    $scope.loginNormal = function() {
+    $scope.loginConModelo = function() {
         UsuarioFactory.login({
-                usuario: $scope.usuario.email,
-                password: $scope.usuario.password
-            })
-            .$promise.then(
-                function success(respuesta) {
-                    console.log(respuesta);
-                    //$scope.entrenadores.push(respuesta.data);
-
-                },
-                function error(error) {
-                    console.log(error);
-                });
+            email: $scope.usuario.email,
+            password: $scope.usuario.password
+        }).$promise.then(
+            function success(respuesta) {
+                console.log('Logueado con modelo');
+                console.log(respuesta);
+            },
+            function error(error) {
+                console.log(error);
+            });
     }
 }]);
