@@ -10,7 +10,6 @@ app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
             templateUrl: "rutas/home.html",
             //  controller: 'ChatController',
             data: {
-                nivelDeAcceso: 0,
                 loginRequerido: false
             }
         })
@@ -19,7 +18,6 @@ app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
             templateUrl: "rutas/acercade.html",
             //  controller: 'ChatController',
             data: {
-                nivelDeAcceso: 0,
                 loginRequerido: false
             }
         })
@@ -28,7 +26,6 @@ app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
             templateUrl: "rutas/registro.html",
             controller: 'RegistroController',
             data: {
-                nivelDeAcceso: 0,
                 loginRequerido: false
             }
         })
@@ -37,7 +34,6 @@ app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
             templateUrl: "rutas/login.html",
             controller: 'LoginController',
             data: {
-                nivelDeAcceso: 0,
                 loginRequerido: false
             }
         })
@@ -46,7 +42,6 @@ app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
             templateUrl: "rutas/paintboard.html",
             //controller: 'CanvasController',
             data: {
-                nivelDeAcceso: 1,
                 loginRequerido: false
             }
         })
@@ -55,8 +50,7 @@ app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
             templateUrl: "rutas/miperfil.html",
             //controller: 'CanvasController',
             data: {
-                nivelDeAcceso: 1,
-                loginRequerido: false
+                loginRequerido: true
             }
         })
         .state('canvas', {
@@ -64,7 +58,6 @@ app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
             templateUrl: "rutas/canvas.html",
             controller: 'CanvasController',
             data: {
-                nivelDeAcceso: 1,
                 loginRequerido: true
             }
         })
@@ -73,7 +66,6 @@ app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
             templateUrl: "rutas/chat.html",
             controller: 'ChatController',
             data: {
-                nivelDeAcceso: 1,
                 loginRequerido: true
             }
         });
