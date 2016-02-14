@@ -19,12 +19,12 @@ app.controller('RegistroController', ['$scope', 'UsuarioFactory', function($scop
               password: $scope.nuevoUsuario.password
           })
           .$promise.then(
-          function correctoLlamoEntrenadores(respuesta){
+          function success(respuesta){
               console.log(respuesta);
               //$scope.entrenadores.push(respuesta.data);
 
           },
-          function errorNoLlamoUsuario(error){
+          function error(error){
               console.log(error);
           });
 
