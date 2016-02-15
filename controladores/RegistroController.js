@@ -6,8 +6,12 @@ app.controller('RegistroController', ['$scope', 'UsuarioFactory', function($scop
           fechaDeNacimiento:'',
           email:'',
           password:'',
-          confirmar:''
-      }
+          confirmar:'',
+          avatarUrl: '',
+          avatarFd: '',
+          url: ''
+
+              }
 
       $scope.agregarNuevoUsuario = function(){
 
@@ -16,7 +20,11 @@ app.controller('RegistroController', ['$scope', 'UsuarioFactory', function($scop
               apellido: $scope.nuevoUsuario.apellido,
               fechaDeNacimiento: $scope.nuevoUsuario.fechaDeNacimiento,
               email: $scope.nuevoUsuario.email,
-              password: $scope.nuevoUsuario.password
+              password: $scope.nuevoUsuario.password,
+              avatarUrl: $scope.nuevoUsuario.avatarUrl,
+              avatarFd: $scope.nuevoUsuario.avatarFd,
+              url: $scope.nuevoUsuario.url
+
           })
           .$promise.then(
           function success(respuesta){
