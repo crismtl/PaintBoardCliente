@@ -1,6 +1,7 @@
-app.controller('LoginController', ['$scope', 'UsuarioFactory', '$state', '$cookies', '$facebook',
-    function($scope, UsuarioFactory, $state, $cookies, $facebook) {
-        $scope.isLoggedIn = false;
+app.controller('LoginController', ['$scope', 'UsuarioFactory', '$state', '$cookies', '$facebook', 'toastr',
+
+    function ($scope, UsuarioFactory, $state, $cookies, $facebook, toastr) {
+        /*$scope.isLoggedIn = false;
         $scope.login = function() {
             $facebook.login().then(function() {
                 refresh();
@@ -18,28 +19,26 @@ app.controller('LoginController', ['$scope', 'UsuarioFactory', '$state', '$cooki
                     $scope.welcomeMsg = "Please log in";
                 });
         }
-        refresh();
+        refresh();*/
 
         $scope.usuario = {
             email: '',
             password: ''
         }
 
-        $scope.loginConModelo = function() {
+        $scope.login = function () {
             UsuarioFactory.login({
                 email: $scope.usuario.email,
                 password: $scope.usuario.password
             }).$promise.then(
                 function success(respuesta) {
-                    console.log(respuesta.id);
-                    console.log(respuesta.email);
+                    toastr.success('Bienvenido a Paint Board', 'Éxito');
                     $cookies.put('UsuarioId', respuesta.id);
-                    console.log('Logueado con modelo');
-                    console.log(respuesta);
                     $state.go('paintboard');
                 },
                 function error(error) {
                     console.log(error);
+                    toastr.error('Algo salió mal con su ingreso', 'Error');
                 });
         }
     }

@@ -1,8 +1,33 @@
 <div class="row">
-    <div class="col-sm-4"><h1>Aquí la foto</h1></div>
+    <div class="col-sm-4">
+        <img src="imagenes/user.png" class="img-circle" width="300" height="300">
+    </div>
     <div class="col-sm-8">
-    	<h1>Nombre: </h1>
-    	<h1>Email: </h1>
-    	<h1>Fecha de nacimiento: </h1>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td>Nombre</td>
+                    <td>{{usuario.nombre}} {{usuario.apellido}}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>{{usuario.email}}</td>
+                </tr>
+                <tr>
+                    <td>Fecha de nacimiento</td>
+                    <td>{{usuario.fechaDeNacimiento}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <form class="form-horizontal" ng-submit="salir()">
+            <fieldset>
+                <legend>Salir de la aplicación</legend>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-3">
+                        <button type="submit" class="btn btn-primary">Salir</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
     </div>
 </div>

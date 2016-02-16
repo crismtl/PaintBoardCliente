@@ -2,7 +2,18 @@ io.sails.url = "http://localhost:1337";
 
 var app = angular.module('paintboard', ['ui.router', 'ngAnimate', 'ngResource', 'toastr', 'ngFacebook', 'ngCookies']);
 
-app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $facebookProvider, toastrConfig) {
+    angular.extend(toastrConfig, {
+        autoDismiss: false,
+        containerId: 'toast-container',
+        maxOpened: 0,
+        newestOnTop: true,
+        positionClass: 'toast-bottom-right',
+        preventDuplicates: false,
+        preventOpenDuplicates: false,
+        target: 'body'
+    });
+
     $facebookProvider.setAppId('946903475391684');
     $stateProvider
         .state('home', {
@@ -42,13 +53,13 @@ app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
             templateUrl: "rutas/paintboard.html",
             //controller: 'CanvasController',
             data: {
-                loginRequerido: false
+                loginRequerido: true
             }
         })
         .state('miperfil', {
             url: "/miperfil",
             templateUrl: "rutas/miperfil.html",
-            //controller: 'CanvasController',
+            controller: 'MiPerfilController',
             data: {
                 loginRequerido: true
             }
@@ -58,7 +69,7 @@ app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
             templateUrl: "rutas/canvas.html",
             controller: 'CanvasController',
             data: {
-                loginRequerido: true
+                loginRequerido: false
             }
         })
         .state('chat', {
@@ -66,15 +77,15 @@ app.config(function($stateProvider, $urlRouterProvider, $facebookProvider) {
             templateUrl: "rutas/chat.html",
             controller: 'ChatController',
             data: {
-                loginRequerido: true
+                loginRequerido: false
             }
         });
     $urlRouterProvider.otherwise("/");
 });
 
-app.run(function($rootScope, $cookies, $state) {
-    // Load the facebook SDK asynchronously
-    (function() {
+app.run(function ($rootScope, $cookies, $state, toastr) {
+    /*// Load the facebook SDK asynchronously
+    (function () {
         // If we've already installed the SDK, we're done
         if (document.getElementById('facebook-jssdk')) {
             return;
@@ -92,24 +103,19 @@ app.run(function($rootScope, $cookies, $state) {
 
         // Insert the Facebook JS SDK into the DOM
         firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
-    }());
+    }());*/
 
-    $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
         var requiereLogin = toState.data.loginRequerido;
-        var nivelAcceso = toState.data.nivelDeAcceso;
 
         if (requiereLogin) {
-            console.log('Si require Login');
             if ($cookies.get('UsuarioId')) {
-                console.log('hizo Login');
-                console.log(nivelAcceso);
+                toastr.success('Felicidades se encuentra logueado', 'Éxito');
             } else {
-                console.log('No ha hecho Login');
+                toastr.info('Necesita estar logueado para poder acceder a esta vista', 'Información');
                 event.preventDefault();
                 return $state.go('login')
             }
-        } else {
-            console.log('No requiere login');
         }
     });
 });

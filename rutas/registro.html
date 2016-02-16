@@ -1,4 +1,4 @@
-<div class="row">
+<!--<div class="row">
     <div class="col-sm-4"></div>
     <div class="col-sm-4">
         <div class="well">
@@ -59,4 +59,51 @@
         </div>
     </div>
     <div class="col-sm-4"></div>
-</div>
+</div>-->
+<form class="form-horizontal">
+    <fieldset>
+        <legend>Registro</legend>
+        <div class="form-group">
+            <label for="inputNombre" class="col-lg-2 control-label">Nombre</label>
+            <div class="col-lg-10">
+                <input ng-model="nuevoUsuario.nombre" type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputApellido" class="col-lg-2 control-label">Apellido</label>
+            <div class="col-lg-10">
+                <input ng-model="nuevoUsuario.apellido" type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputFNacimiento" class="col-lg-2 control-label">Fecha de nacimiento</label>
+            <div class="col-lg-10">
+                <input ng-model="nuevoUsuario.fechaDeNacimiento" type="date" class="form-control" id="inputFNacimiento" placeholder="Fecha de nacimiento">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+                <input ng-model="nuevoUsuario.email" type="email" class="form-control" id="inputEmail" placeholder="Email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+            <div class="col-lg-10">
+                <input ng-model="nuevoUsuario.password" type="password" class="form-control" id="inputPassword" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputConfirmar" class="col-lg-2 control-label">Confirmar password</label>
+            <div class="col-lg-10">
+                <input ng-model="nuevoUsuario.confirmar" type="password" class="form-control" id="inputConfirmar" placeholder="Confirmar password">
+            </div>
+        </div>
+        <div class="form-group ">
+            <div class="col-lg-10 col-lg-offset-2 ">
+                <button type="reset " class="btn btn-default ">Cancelar</button>
+                <button type="submit " class="btn btn-primary ">Registrarse</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
