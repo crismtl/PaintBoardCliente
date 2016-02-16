@@ -19,7 +19,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $facebookProvider, toas
         .state('home', {
             url: "/",
             templateUrl: "rutas/home.html",
-            //  controller: 'ChatController',
             data: {
                 loginRequerido: false
             }
@@ -27,7 +26,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $facebookProvider, toas
         .state('acercade', {
             url: "/acercade",
             templateUrl: "rutas/acercade.html",
-            //  controller: 'ChatController',
             data: {
                 loginRequerido: false
             }
@@ -48,14 +46,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $facebookProvider, toas
                 loginRequerido: false
             }
         })
-        .state('paintboard', {
-            url: "/paintboard",
-            templateUrl: "rutas/paintboard.html",
-            //controller: 'CanvasController',
-            data: {
-                loginRequerido: true
-            }
-        })
         .state('miperfil', {
             url: "/miperfil",
             templateUrl: "rutas/miperfil.html",
@@ -69,7 +59,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $facebookProvider, toas
             templateUrl: "rutas/canvas.html",
             controller: 'CanvasController',
             data: {
-                loginRequerido: false
+                loginRequerido: true
             }
         })
         .state('chat', {
@@ -77,7 +67,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $facebookProvider, toas
             templateUrl: "rutas/chat.html",
             controller: 'ChatController',
             data: {
-                loginRequerido: false
+                loginRequerido: true
             }
         });
     $urlRouterProvider.otherwise("/");
