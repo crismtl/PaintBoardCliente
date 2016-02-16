@@ -59,7 +59,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $facebookProvider, toas
             templateUrl: "rutas/canvas.html",
             controller: 'CanvasController',
             data: {
-                loginRequerido: true
+                loginRequerido: false
             }
         })
         .state('chat', {
