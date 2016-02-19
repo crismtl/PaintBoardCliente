@@ -8,7 +8,7 @@ app.controller('ChatController', ['$scope', '$http', 'toastr', function ($scope,
             console.log('Se suscribio con blueprint de Sailsjs')
             console.log(resData);
             $scope.mensajes = resData;
-            console.log($scope.mensajes[0].idUsuario.apellido);
+            //console.log($scope.mensajes[0].idUsuario.apellido);
             //$digest() es necesario para que se actualice en la vista
             $scope.$digest();
         });
@@ -27,9 +27,9 @@ app.controller('ChatController', ['$scope', '$http', 'toastr', function ($scope,
         console.log('Entro a llamada con WebSocket');
         io.socket.post(
             'http://localhost:1337/Mensaje/suscribirseOPublicar', {
-                texto: $scope.nuevoMensaje
+                texto: $scope.nuevoMensaje,
+                idUsuario: $cookies.get('UsuarioId')
             });
-        $scope.nuevoMensaje = "";
     }
 
     //Escuchamos que el servidor nos responda 'Chat' (nombre de modelo en sails)
